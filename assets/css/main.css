@@ -2190,7 +2190,7 @@ input, select, textarea {
 		cursor: pointer;
 		display: inline-block;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
-		font-size: 0.8rem;
+		font-size: 1.5rem;
 		font-weight: 900;
 		letter-spacing: 0.075em;
 		height: 3rem;
@@ -2284,6 +2284,9 @@ input, select, textarea {
 				font-size: 0.9rem;
 				height: 3.25rem;
 				line-height: 3.25rem;
+				display: block; /* Necesario para margin auto */
+        margin-left: auto;
+        margin-right: auto;
 			}
 
 				input[type="submit"].large,
@@ -2317,8 +2320,8 @@ input, select, textarea {
 	button,
 	.button {
 		background-color: transparent;
-		box-shadow: inset 0 0 0 2px #212931;
-		color: #212931 !important;
+		box-shadow: inset 0 0 0 6px #fff;
+		color: #fff !important;
 	}
 
 		input[type="submit"]:hover,
@@ -2767,25 +2770,94 @@ input, select, textarea {
 				margin: 2rem 0;
 			}
 
+			iframe {
+                width: 100%;
+                height: 220px;
+                max-width: 100%;
+            }
+
 		}
 
 	a.image {
+    overflow: hidden;
+    position: relative; /* Necesario para posicionar el overlay */
+    display: inline-block; /* Para que el contenedor se ajuste a la imagen */
+}
+
+a.image img {
+    -moz-transition: -moz-transform 0.2s ease-out;
+    -webkit-transition: -webkit-transform 0.2s ease-out;
+    -ms-transition: -ms-transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
+    display: block; /* Elimina espacio extra debajo de la imagen */
+}
+
+/* Crear el overlay con pseudo-elemento */
+a.image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Inicialmente transparente */
+    z-index: 1;
+    transition: background-color 0.2s ease-out;
+    pointer-events: none; /* Permite hacer hover en la imagen debajo */
+}
+
+a.image:hover img {
+    -moz-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+a.image:hover::before {
+    background-color: rgba(0, 0, 0, 0.3); /* Negro al 30% de opacidad */
+}
+
+		.card {
+		position: relative;
+		width: 500px; /* ajusta según tu diseño */
 		overflow: hidden;
-	}
-
-		a.image img {
-			-moz-transition: -moz-transform 0.2s ease-out;
-			-webkit-transition: -webkit-transform 0.2s ease-out;
-			-ms-transition: -ms-transform 0.2s ease-out;
-			transition: transform 0.2s ease-out;
+		border-radius: 10px;
 		}
 
-		a.image:hover img {
-			-moz-transform: scale(1.05);
-			-webkit-transform: scale(1.05);
-			-ms-transform: scale(1.05);
-			transform: scale(1.05);
+		.card-content {
+		position: absolute;
+		bottom: 115px;       /* coloca el texto en la parte baja de la imagen */
+		left: 50%;
+		transform: translateX(-50%);
+		text-align: center;
+		color: white;  
+		z-index: 2;     /* texto en blanco para resaltar */
 		}
+
+		.card-content h2 {
+		margin: 0 0 10px;
+		font-size: 22px;
+		font-weight: bold;
+		}
+
+		.card-content .button {
+		display: inline-block;
+		margin-bottom: 8px;
+		padding: 0px 20px;
+		background: #0f5b8a;
+		color: white;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		}
+
+		.card-content .price {
+		font-size: 18px;
+		font-weight: bold;
+		color: white;
+		}
+
+
 
 /* Actions */
 
