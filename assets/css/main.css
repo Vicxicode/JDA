@@ -2285,8 +2285,13 @@ input, select, textarea {
 				height: 3.25rem;
 				line-height: 3.25rem;
 				display: block; /* Necesario para margin auto */
-        margin-left: auto;
-        margin-right: auto;
+				margin-left: auto;
+				margin-right: auto;
+				transform: translateY(60%);
+			}
+
+			h4 {
+				transform: translate(0px, 30px); /* (x,y) → derecha, abajo */
 			}
 
 				input[type="submit"].large,
@@ -2320,8 +2325,8 @@ input, select, textarea {
 	button,
 	.button {
 		background-color: transparent;
-		box-shadow: inset 0 0 0 6px #fff;
-		color: #fff !important;
+		box-shadow: inset 0 0 0 6px #2575fc;
+		color: #1e252d !important;
 	}
 
 		input[type="submit"]:hover,
@@ -2776,6 +2781,11 @@ input, select, textarea {
                 max-width: 100%;
             }
 
+			.video-fondo {
+			max-width: 100%;
+			height: auto;
+			}
+
 		}
 
 	a.image {
@@ -2804,6 +2814,7 @@ a.image::before {
     z-index: 1;
     transition: background-color 0.2s ease-out;
     pointer-events: none; /* Permite hacer hover en la imagen debajo */
+	background-color: rgba(0, 0, 0, 0.3); 
 }
 
 a.image:hover img {
@@ -2817,6 +2828,15 @@ a.image:hover::before {
     background-color: rgba(0, 0, 0, 0.3); /* Negro al 30% de opacidad */
 }
 
+.video-fondo {
+  width: 450px;   /* ancho que quieras */
+  height: 350px;   /* mantiene la proporción */
+}
+
+.btn-link {
+  border-bottom: none !important;
+}
+
 		.card {
 		position: relative;
 		width: 500px; /* ajusta según tu diseño */
@@ -2826,12 +2846,12 @@ a.image:hover::before {
 
 		.card-content {
 		position: absolute;
-		bottom: 115px;       /* coloca el texto en la parte baja de la imagen */
+		bottom: 190px;       /* coloca el texto en la parte baja de la imagen */
 		left: 50%;
 		transform: translateX(-50%);
 		text-align: center;
 		color: white;  
-		z-index: 2;     /* texto en blanco para resaltar */
+		z-index: 2;  
 		}
 
 		.card-content h2 {
@@ -4870,3 +4890,183 @@ a.image:hover::before {
 		}
 
 	}
+
+.carrusel-container {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+	padding: 20px;
+}
+
+.carrusel-content {
+	max-width: 900px;
+	width: 100%;
+	background-color: white;
+	border-radius: 15px;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+	padding: 30px;
+	text-align: center;
+}
+
+.carrusel-title {
+	color: #2575fc;
+	margin-bottom: 20px;
+	font-size: 2.2rem;
+}
+
+.carrusel-description {
+	color: #555;
+	margin-bottom: 30px;
+	line-height: 1.6;
+}
+
+/* Estilos del carrusel */
+.carrusel {
+	position: relative;
+	width: 100%;
+	height: 400px;
+	overflow: hidden;
+	border-radius: 10px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+	margin: 0 auto;
+}
+
+.carrusel-inner {
+	width: 600%;
+	height: 100%;
+	display: flex;
+	transition: transform 0.8s ease-in-out;
+}
+
+.carrusel-slide {
+	width: 16.666%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+}
+
+/* Navegación del carrusel */
+.carrusel-nav {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+	gap: 10px;
+}
+
+.carrusel-nav-btn {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background-color: #ccc;
+	cursor: pointer;
+	transition: background-color 0.3s, transform 0.3s;
+}
+
+.carrusel-nav-btn:hover {
+	background-color: #999;
+	transform: scale(1.2);
+}
+
+/* Radio buttons para controlar el carrusel */
+#carrusel-radio-1:checked ~ .carrusel .carrusel-inner {
+	transform: translateX(0%);
+}
+
+#carrusel-radio-2:checked ~ .carrusel .carrusel-inner {
+	transform: translateX(-16.666%);
+}
+
+#carrusel-radio-3:checked ~ .carrusel .carrusel-inner {
+	transform: translateX(-33.333%);
+}
+
+#carrusel-radio-4:checked ~ .carrusel .carrusel-inner {
+	transform: translateX(-50%);
+}
+
+#carrusel-radio-5:checked ~ .carrusel .carrusel-inner {
+	transform: translateX(-66.666%);
+}
+
+#carrusel-radio-6:checked ~ .carrusel .carrusel-inner {
+	transform: translateX(-83.333%);
+}
+
+/* Cambiar color del botón activo */
+#carrusel-radio-1:checked ~ .carrusel-nav .carrusel-nav-btn[for="carrusel-radio-1"],
+#carrusel-radio-2:checked ~ .carrusel-nav .carrusel-nav-btn[for="carrusel-radio-2"],
+#carrusel-radio-3:checked ~ .carrusel-nav .carrusel-nav-btn[for="carrusel-radio-3"],
+#carrusel-radio-4:checked ~ .carrusel-nav .carrusel-nav-btn[for="carrusel-radio-4"],
+#carrusel-radio-5:checked ~ .carrusel-nav .carrusel-nav-btn[for="carrusel-radio-5"],
+#carrusel-radio-6:checked ~ .carrusel-nav .carrusel-nav-btn[for="carrusel-radio-6"] {
+	background-color: #2575fc;
+	transform: scale(1.2);
+}
+
+/* Ocultar radio buttons reales */
+.carrusel-radio {
+	display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.carrusel {
+		height: 300px;
+	}
+	
+	.carrusel-title {
+		font-size: 1.8rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.carrusel {
+		height: 250px;
+	}
+	
+	.carrusel-title {
+		font-size: 1.5rem;
+	}
+	
+	.carrusel-content {
+		padding: 20px;
+	}
+}
+
+.image-instructions {
+	background-color: #f8f9fa;
+	border-left: 4px solid #2575fc;
+	padding: 15px;
+	margin-top: 30px;
+	text-align: left;
+	border-radius: 4px;
+}
+
+.code-block {
+	background-color: #2d2d2d;
+	color: #f8f8f2;
+	padding: 15px;
+	border-radius: 5px;
+	margin: 15px 0;
+	overflow-x: auto;
+	font-family: monospace;
+	font-size: 14px;
+}
+
+.comment {
+	color: #75715e;
+}
+
+.property {
+	color: #a6e22e;
+}
+
+.actions.special.dos {
+	color: black;
+}
