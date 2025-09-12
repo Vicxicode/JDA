@@ -100,6 +100,93 @@
                                     <label for="carrusel-radio-6" class="carrusel-nav-btn"></label>
                                 </div>
                             </div><br>
+							<!-- Cards -->
+							<div class="hotels-container">
+								<div class="hotel-card" 
+									data-name="Hotel Bahia Principe Grand Turquesa"
+									data-img="images/hotel punta cana/puntacanahotel1.jpg"
+									data-desc="El hotel Bahia Principe Grand Turquesa, es un resort de lujo reconocido por su excelente servicio y por brindar una experiencia todo incluido que cubre todas las expectativas de los viajeros más exigentes. Este elegante complejo se ubica en la costa este de la isla, en la zona de Bávaro, conocida por sus playas paradisíacas de arena blanca y aguas turquesas. La privilegiada localización del resort le permite ofrecer vistas espectaculares al mar Caribe, creando un ambiente perfecto para relajarse y disfrutar de la naturaleza."
+									data-map="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3778.7206890253005!2d-68.4697199!3d18.721319!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea8ebb708d89b59%3A0xf858e37f418a962!2sBahia%20Principe%20Grand%20Turquesa!5e0!3m2!1ses-419!2sco!4v1757695007582!5m2!1ses-419!2sco">
+									<h3>Hotel Bahia Principe Grand Turquesa</h3>
+									<img src="images/hotel punta cana/puntacanahotel1.jpg" alt="Hotel" class="hotel-img">
+								</div>
+
+								<div class="hotel-card" 
+									data-name="Hotel Whala Bávaro"
+									data-img="images/hotel punta cana/puntacanahotel2.jpg"
+									data-desc="Este encantador establecimiento se encuentra a pocos pasos de la playa El Cortecito, conocida por sus aguas cristalinas y arena blanca. Perfecto para quienes buscan una experiencia relajada, pero cercana a las principales atracciones, el Whala! Bávaro combina comodidad, buena ubicación y precios accesibles. Con su estilo moderno y tropical, este hotel es ideal tanto para parejas como para familias o grupos de amigos que desean explorar lo mejor de Punta Cana mientras disfrutan de un ambiente tranquilo y de fácil acceso."
+									data-map="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3779.530527015078!2d-68.4180618!3d18.6850517!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea8ec8fc4b85971%3A0x63368ee3bd4ca4ba!2swhala*21b%C3%A1varo!5e0!3m2!1ses-419!2sco!4v1757695503787!5m2!1ses-419!2sco">
+									<h3>Hotel Whala Bávaro</h3>
+									<img src="images/hotel punta cana/puntacanahotel2.jpg" alt="Hotel" class="hotel-img">
+								</div>
+
+								<div class="hotel-card" 
+									data-name="Hotel Impressive"
+									data-img="images/hotel punta cana/puntacanahotel3.jpg"
+									data-desc="El Impressive Punta Cana es un resort todo incluido de 4 estrellas ubicado en la playa El Cortecito en Bávaro, Punta Cana. Ofrece habitaciones modernas rodeadas de un ambiente tropical, múltiples piscinas, variedad gastronómica en restaurantes, entretenimiento en vivo, spa, y actividades para toda la familia. Es una opción ideal para relajarse y disfrutar del Caribe en un entorno exclusivo."
+									data-map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3779.499931608854!2d-68.418157!3d18.6864231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea8ed89429de481%3A0xabfbf57435023e47!2sImpressive%20Punta%20Cana!5e0!3m2!1ses-419!2sco!4v1757696297357!5m2!1ses-419!2sco">
+									<h3>Hotel Impressive</h3>
+									<img src="images/hotel punta cana/puntacanahotel3.jpg" alt="Hotel" class="hotel-img">
+								</div>
+
+								<div class="hotel-card" 
+									data-name="Hotel Occidental Caribe"
+									data-img="images/hotel punta cana/puntacanahotel4.jpg"
+									data-desc="El Occidental Caribe ofrece todo lo necesario para disfrutar al máximo de una estancia llena de entretenimiento. Un resort de playa con todo lo necesario para pasar unas divertidas vacaciones con familiares o amigos bajo el sol del Caribe. Es un resort vacacional que goza de una incomparable ubicación frente a las transparentes aguas de la magnífica Playa Arena Gorda, considerada una de las mejores de República Dominicana."
+									data-map="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3778.4317564158227!2d-68.4747896!3d18.734242!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea8ea1e2994568b%3A0x3454aa51efbc305!2sOccidental%20Caribe%20-%20All%20Inclusive!5e0!3m2!1ses-419!2sco!4v1757695927284!5m2!1ses-419!2sco">
+									<h3>Hotel Occidental Caribe</h3>
+									<img src="images/hotel punta cana/puntacanahotel4.jpg" alt="Hotel" class="hotel-img">
+								</div>
+							</div>
+							<!-- Modal único -->
+							<div id="hotelModal" class="modal">
+								<div class="modal-content">
+									<span class="close" id="closeModal">&times;</span>
+									
+									<!-- Imagen -->
+									<img id="modalImg" src="" alt="Hotel">
+
+									<!-- Info -->
+									<div class="hotel-info">
+									<h2 id="modalTitle"></h2>
+									<p id="modalDesc"></p>
+									<h3>Servicios:</h3>
+									<ul class="services">
+										<li>📶 WiFi Gratis</li>
+										<li>🏊 Piscina</li>
+										<li>🍽️ Comida</li>
+										<li>🏖️ Playa</li>
+										<li>❄️ Aire Acondicionado</li>
+									</ul>
+									</div>
+
+									<!-- Mapa -->
+									<iframe id="modalMap" class="map" allowfullscreen="" loading="lazy"></iframe>
+								</div>
+							</div>
+
+							<script>
+							const modal = document.getElementById('hotelModal');
+							const closeModal = document.getElementById('closeModal');
+							const modalImg = document.getElementById('modalImg');
+							const modalTitle = document.getElementById('modalTitle');
+							const modalDesc = document.getElementById('modalDesc');
+							const modalMap = document.getElementById('modalMap');
+
+							// Selecciona todos los hoteles
+							document.querySelectorAll('.hotel-card').forEach(card => {
+								card.addEventListener('click', () => {
+								modalTitle.textContent = card.dataset.name;
+								modalImg.src = card.dataset.img;
+								modalDesc.textContent = card.dataset.desc;
+								modalMap.src = card.dataset.map;
+								modal.style.display = 'block';
+								});
+							});
+
+							closeModal.onclick = () => modal.style.display = 'none';
+							window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; }
+							</script><br>
                             <ul class="actions special dos">
 									<li><a href="https://api.whatsapp.com/send?phone=573247674274" class="button large dos">Reservar</a></li>
 							</ul>

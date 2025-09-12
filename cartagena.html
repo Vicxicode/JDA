@@ -100,6 +100,75 @@
                                     <label for="carrusel-radio-6" class="carrusel-nav-btn"></label>
                                 </div>
                             </div><br>
+							<!-- Cards -->
+							<div class="hotels-container">
+								<div class="hotel-card" 
+									data-name="Hotel Dann"
+									data-img="images/hotel cartagena/cartagenahotel1.jpg"
+									data-desc="Este hotel tranquilo con acceso directo a la playa está a 6 km del Museo del Oro Zenú y a 7 km del castillo San Felipe de Barajas, una fortaleza en la cima de una colina. Las habitaciones informales tienen acceso a Wi-Fi, TV de pantalla plana y vista a la ciudad o al mar. Las habitaciones mejoradas cuentan con área de estar, mientras que las suites incluyen comedor, sofá cama o balcón. Algunas habitaciones tienen murallas de piedra expuesta y decoración colorida."
+									data-map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.3032468536567!2d-75.5631555!3d10.3974721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef62f76ca2feecf%3A0x789e95c8765465d!2sHotel%20Dann%20Cartagena!5e0!3m2!1ses-419!2sco!4v1757699128240!5m2!1ses-419!2sco">
+									<h3>Hotel Dann</h3>
+									<img src="images/hotel cartagena/cartagenahotel1.jpg" alt="Hotel" class="hotel-img">
+								</div>
+
+								<div class="hotel-card" 
+									data-name="Hotel Osh"
+									data-img="images/hotel cartagena/cartagenahotel2.jpg"
+									data-desc="Osh Hotel Cartagena dispone de piscina al aire libre, centro de fitness, jardín y salón de uso común en Cartagena de Indias. El alojamiento tiene terraza y restaurante, además de bar. El alojamiento ofrece recepción 24 horas, traslado para ir o volver del aeropuerto, servicio de habitaciones y wifi gratis."
+									data-map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.9782896941642!2d-75.5450383!3d10.4232973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef62f9de026a975%3A0xaea05bccb994fcf6!2sOSH%20Hotel%20Cartagena%20%2F%20Restaurante%20%26%20Rooftop%20Bar!5e0!3m2!1ses-419!2sco!4v1757699045542!5m2!1ses-419!2sco">
+									<h3>Hotel Osh</h3>
+									<img src="images/hotel cartagena/cartagenahotel2.jpg" alt="Hotel" class="hotel-img">
+								</div>
+							</div>
+							<!-- Modal único -->
+							<div id="hotelModal" class="modal">
+								<div class="modal-content">
+									<span class="close" id="closeModal">&times;</span>
+									
+									<!-- Imagen -->
+									<img id="modalImg" src="" alt="Hotel">
+
+									<!-- Info -->
+									<div class="hotel-info">
+									<h2 id="modalTitle"></h2>
+									<p id="modalDesc"></p>
+									<h3>Servicios:</h3>
+									<ul class="services">
+										<li>📶 WiFi Gratis</li>
+										<li>🏊 Piscina</li>
+										<li>🍽️ Comida</li>
+										<li>🏖️ Playa</li>
+										<li>❄️ Aire Acondicionado</li>
+									</ul>
+									</div>
+
+									<!-- Mapa -->
+									<iframe id="modalMap" class="map" allowfullscreen="" loading="lazy"></iframe>
+								</div>
+							</div>
+
+							<script>
+							const modal = document.getElementById('hotelModal');
+							const closeModal = document.getElementById('closeModal');
+							const modalImg = document.getElementById('modalImg');
+							const modalTitle = document.getElementById('modalTitle');
+							const modalDesc = document.getElementById('modalDesc');
+							const modalMap = document.getElementById('modalMap');
+
+							// Selecciona todos los hoteles
+							document.querySelectorAll('.hotel-card').forEach(card => {
+								card.addEventListener('click', () => {
+								modalTitle.textContent = card.dataset.name;
+								modalImg.src = card.dataset.img;
+								modalDesc.textContent = card.dataset.desc;
+								modalMap.src = card.dataset.map;
+								modal.style.display = 'block';
+								});
+							});
+
+							closeModal.onclick = () => modal.style.display = 'none';
+							window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; }
+							</script><br>
                             <ul class="actions special dos">
 									<li><a href="https://api.whatsapp.com/send?phone=573247674274" class="button large dos">Reservar</a></li>
 							</ul>

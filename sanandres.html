@@ -100,6 +100,75 @@
                                     <label for="carrusel-radio-6" class="carrusel-nav-btn"></label>
                                 </div>
                             </div><br>
+							<!-- Cards -->
+							<div class="hotels-container">
+								<div class="hotel-card" 
+									data-name="Hotel Aquamare"
+									data-img="images/hotel san andres/sanandreshotel1.jpg"
+									data-desc="Aquamare Hotel, que cuenta con restaurante, bar y vistas al jardín, se encuentra en San Andrés, a 2 min a pie de Playa de Spratt Bight. Este hotel de 4 estrellas ofrece piscina al aire libre y habitaciones con aire acondicionado, wifi gratis y baño privado. El alojamiento ofrece servicio de habitaciones, recepción 24 horas y servicio de organización de tours."
+									data-map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3894.0047761135984!2d-81.6913921!3d12.5819365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f05a5d3a5b0f40b%3A0xf06ac420e243682c!2sAquamare%20Hotel!5e0!3m2!1ses-419!2sco!4v1757697883401!5m2!1ses-419!2sco">
+									<h3>Hotel Aquamare</h3>
+									<img src="images/hotel san andres/sanandreshotel1.jpg" alt="Hotel" class="hotel-img">
+								</div>
+
+								<div class="hotel-card" 
+									data-name="Hotel El Dorado"
+									data-img="images/hotel san andres/sanandreshotel2.jpg"
+									data-desc="Este hotel tranquilo se encuentra a 2 minutos a pie de la playa Spratt Bight en el mar Caribe, a 4 minutos a pie de la animada plaza Cañón de Morgan y a 2 km del aeropuerto internacional Gustavo Rojas Pinilla. Las habitaciones cuentan con mobiliario sencillo, TV de pantalla plana, minibar y Wi‑Fi. Las habitaciones mejoradas tienen balcón."
+									data-map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3893.990289100823!2d-81.6901378!3d12.582891499999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f05af5568628c45%3A0x869e52994481097c!2sHotel%20El%20Dorado!5e0!3m2!1ses-419!2sco!4v1757698102140!5m2!1ses-419!2sco">
+									<h3>Hotel El Dorado</h3>
+									<img src="images/hotel san andres/sanandreshotel2.jpg" alt="Hotel" class="hotel-img">
+								</div>
+							</div>
+							<!-- Modal único -->
+							<div id="hotelModal" class="modal">
+								<div class="modal-content">
+									<span class="close" id="closeModal">&times;</span>
+									
+									<!-- Imagen -->
+									<img id="modalImg" src="" alt="Hotel">
+
+									<!-- Info -->
+									<div class="hotel-info">
+									<h2 id="modalTitle"></h2>
+									<p id="modalDesc"></p>
+									<h3>Servicios:</h3>
+									<ul class="services">
+										<li>📶 WiFi Gratis</li>
+										<li>🏊 Piscina</li>
+										<li>🍽️ Comida</li>
+										<li>🏖️ Playa</li>
+										<li>❄️ Aire Acondicionado</li>
+									</ul>
+									</div>
+
+									<!-- Mapa -->
+									<iframe id="modalMap" class="map" allowfullscreen="" loading="lazy"></iframe>
+								</div>
+							</div>
+
+							<script>
+							const modal = document.getElementById('hotelModal');
+							const closeModal = document.getElementById('closeModal');
+							const modalImg = document.getElementById('modalImg');
+							const modalTitle = document.getElementById('modalTitle');
+							const modalDesc = document.getElementById('modalDesc');
+							const modalMap = document.getElementById('modalMap');
+
+							// Selecciona todos los hoteles
+							document.querySelectorAll('.hotel-card').forEach(card => {
+								card.addEventListener('click', () => {
+								modalTitle.textContent = card.dataset.name;
+								modalImg.src = card.dataset.img;
+								modalDesc.textContent = card.dataset.desc;
+								modalMap.src = card.dataset.map;
+								modal.style.display = 'block';
+								});
+							});
+
+							closeModal.onclick = () => modal.style.display = 'none';
+							window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; }
+							</script><br>
                             <ul class="actions special dos">
 									<li><a href="https://api.whatsapp.com/send?phone=573247674274" class="button large dos">Reservar</a></li>
 							</ul>

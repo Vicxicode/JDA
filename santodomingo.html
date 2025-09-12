@@ -100,6 +100,84 @@
                                     <label for="carrusel-radio-6" class="carrusel-nav-btn"></label>
                                 </div>
                             </div><br>
+							<!-- Cards -->
+							<div class="hotels-container">
+								<div class="hotel-card" 
+									data-name="Hotel Tropicana"
+									data-img="images/hotel santo domingo/santodomingohotel1.jpg"
+									data-desc="Es un alojamiento de 4 estrellas que se encuentra en Santo Domingo Este, en la República Dominicana. Este hotel está estratégicamente ubicado en la Autopista Las Américas, KM 8 1/2, lo que le otorga una excelente accesibilidad tanto al aeropuerto como al centro de la ciudad, facilitando la llegada de turistas y viajeros de negocios. Su ubicación también permite un fácil acceso a algunas de las principales atracciones turísticas de Santo Domingo, como el Parque Nacional Los Tres Ojos, la Zona Colonial y otras zonas de interés cultural e histórico."
+									data-map="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3784.241385266705!2d-69.8357306!3d18.4727222!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf8795042f6911%3A0x69ecafc4e042d44c!2sHotel%20Tropicana!5e0!3m2!1ses-419!2sco!4v1757696656609!5m2!1ses-419!2sco">
+									<h3>Hotel Bahia Tropicana</h3>
+									<img src="images/hotel santo domingo/santodomingohotel1.jpg" alt="Hotel" class="hotel-img">
+								</div>
+
+								<div class="hotel-card" 
+									data-name="Hotel Dominican Fiesta"
+									data-img="images/hotel santo domingo/santodomingohotel2.jpg"
+									data-desc="se encuentra en una de las zonas más céntricas de la ciudad, cerca del malecón, una avenida costera que bordea el mar Caribe, proporcionando una excelente vista del océano desde las habitaciones del hotel. Esto lo convierte en una opción atractiva para quienes buscan alojarse con vistas panorámicas del mar, disfrutar de la brisa marina y estar cerca de atracciones turísticas clave de Santo Domingo."
+									data-map="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7569.901008495429!2d-69.9722239!3d18.4405563!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea561922f3a6c8b%3A0xdc3a9f93d5b2968f!2sDominican%20Fiesta%20Hotel%20Santo%20Domingo!5e0!3m2!1ses-419!2sco!4v1757696953463!5m2!1ses-419!2sco">
+									<h3>Hotel Dominican Fiesta</h3>
+									<img src="images/hotel santo domingo/santodomingohotel2.jpg" alt="Hotel" class="hotel-img">
+								</div>
+
+								<div class="hotel-card" 
+									data-name="Hotel Boca Chica"
+									data-img="images/hotel santo domingo/santodomingohotel3.jpg"
+									data-desc="Es un alojamiento ideal que se encuentra en Boca Chica, Santo Domingo, en la República Dominicana. Este hotel está estratégicamente ubicado frente a una de las playas más famosas de la zona, lo que le brinda a sus visitantes acceso directo al mar Caribe y un ambiente perfecto para el descanso. Además, se encuentra a pocos minutos del Aeropuerto Internacional Las Américas y cerca del centro de Santo Domingo, facilitando la llegada de turistas nacionales e internacionales. Su excelente ubicación también permite un fácil acceso a diversas atracciones turísticas, como la Zona Colonial, el Parque Nacional Los Tres Ojos, y otros lugares de interés cultural, histórico y natural."
+									data-map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.8028084376774!2d-69.6105257!3d18.4472603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf7e36558fc655%3A0x8c18ba07825b689d!2swhala*21bocachica!5e0!3m2!1ses-419!2sco!4v1757697241230!5m2!1ses-419!2sco">
+									<h3>Hotel Boca Chica</h3>
+									<img src="images/hotel santo domingo/santodomingohotel3.jpg" alt="Hotel" class="hotel-img">
+								</div>
+							</div>
+							<!-- Modal único -->
+							<div id="hotelModal" class="modal">
+								<div class="modal-content">
+									<span class="close" id="closeModal">&times;</span>
+									
+									<!-- Imagen -->
+									<img id="modalImg" src="" alt="Hotel">
+
+									<!-- Info -->
+									<div class="hotel-info">
+									<h2 id="modalTitle"></h2>
+									<p id="modalDesc"></p>
+									<h3>Servicios:</h3>
+									<ul class="services">
+										<li>📶 WiFi Gratis</li>
+										<li>🏊 Piscina</li>
+										<li>🍽️ Comida</li>
+										<li>🏖️ Playa</li>
+										<li>❄️ Aire Acondicionado</li>
+									</ul>
+									</div>
+
+									<!-- Mapa -->
+									<iframe id="modalMap" class="map" allowfullscreen="" loading="lazy"></iframe>
+								</div>
+							</div>
+
+							<script>
+							const modal = document.getElementById('hotelModal');
+							const closeModal = document.getElementById('closeModal');
+							const modalImg = document.getElementById('modalImg');
+							const modalTitle = document.getElementById('modalTitle');
+							const modalDesc = document.getElementById('modalDesc');
+							const modalMap = document.getElementById('modalMap');
+
+							// Selecciona todos los hoteles
+							document.querySelectorAll('.hotel-card').forEach(card => {
+								card.addEventListener('click', () => {
+								modalTitle.textContent = card.dataset.name;
+								modalImg.src = card.dataset.img;
+								modalDesc.textContent = card.dataset.desc;
+								modalMap.src = card.dataset.map;
+								modal.style.display = 'block';
+								});
+							});
+
+							closeModal.onclick = () => modal.style.display = 'none';
+							window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; }
+							</script><br>
                             <ul class="actions special dos">
 									<li><a href="https://api.whatsapp.com/send?phone=573247674274" class="button large dos">Reservar</a></li>
 							</ul>

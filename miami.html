@@ -100,6 +100,75 @@
                                     <label for="carrusel-radio-6" class="carrusel-nav-btn"></label>
                                 </div>
                             </div><br>
+							<!-- Cards -->
+							<div class="hotels-container">
+								<div class="hotel-card" 
+									data-name="Hotel InterContinental"
+									data-img="images/hotel miami/miamihotel1.jpg"
+									data-desc="Este lujoso hotel de gran altura, con vistas a la bahía Vizcaína se encuentra a 8 minutos a pie del Teatro Olympia y a 12 minutos a pie del FTX Arena. Las habitaciones sofisticadas cuentan con cafetera y baño de mármol, además de TV de pantalla plana y Wi-Fi; algunas ofrecen vista a la bahía. Las habitaciones y suites del área exclusiva para miembros del club ofrecen acceso a un salón con desayuno y aperitivos incluidos."
+									data-map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.9507360759267!2d-80.18590309999999!3d25.7721907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b4276878ddbb%3A0x5bb1fcd840d2173c!2sInterContinental%20Miami!5e0!3m2!1ses-419!2sco!4v1757698571406!5m2!1ses-419!2sco">
+									<h3>Hotel InterContinental</h3>
+									<img src="images/hotel miami/miamihotel1.jpg" alt="Hotel" class="hotel-img">
+								</div>
+
+								<div class="hotel-card" 
+									data-name="Hotel Novotel Miami Brickell"
+									data-img="images/hotel miami/miamihotel2.jpg"
+									data-desc="Este hotel luminoso informal se encuentra a 6 minutos a pie de la estación de Metromover, a 12 minutos a pie de la bahía Vizcaína y a 3.2 km del mercado Bayside. Las habitaciones tranquilas, que cuentan con vista a la ciudad y decoración en colores neutros, disponen de Wi-Fi gratis, TV de pantalla plana de 50 pulgadas, frigobar y cafetera Nespresso. Las habitaciones mejoradas incluyen vista a la bahía."
+									data-map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.3262936066444!2d-80.19692309999999!3d25.7597839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b687b40a7671%3A0xf4856d1a9bd78c42!2sNovotel%20Miami%20Brickell!5e0!3m2!1ses-419!2sco!4v1757698681206!5m2!1ses-419!2sco">
+									<h3>Hotel Novotel Miami Brickell</h3>
+									<img src="images/hotel miami/miamihotel2.jpg" alt="Hotel" class="hotel-img">
+								</div>
+							</div>
+							<!-- Modal único -->
+							<div id="hotelModal" class="modal">
+								<div class="modal-content">
+									<span class="close" id="closeModal">&times;</span>
+									
+									<!-- Imagen -->
+									<img id="modalImg" src="" alt="Hotel">
+
+									<!-- Info -->
+									<div class="hotel-info">
+									<h2 id="modalTitle"></h2>
+									<p id="modalDesc"></p>
+									<h3>Servicios:</h3>
+									<ul class="services">
+										<li>📶 WiFi Gratis</li>
+										<li>🏊 Piscina</li>
+										<li>🍽️ Comida</li>
+										<li>🏖️ Playa</li>
+										<li>❄️ Aire Acondicionado</li>
+									</ul>
+									</div>
+
+									<!-- Mapa -->
+									<iframe id="modalMap" class="map" allowfullscreen="" loading="lazy"></iframe>
+								</div>
+							</div>
+
+							<script>
+							const modal = document.getElementById('hotelModal');
+							const closeModal = document.getElementById('closeModal');
+							const modalImg = document.getElementById('modalImg');
+							const modalTitle = document.getElementById('modalTitle');
+							const modalDesc = document.getElementById('modalDesc');
+							const modalMap = document.getElementById('modalMap');
+
+							// Selecciona todos los hoteles
+							document.querySelectorAll('.hotel-card').forEach(card => {
+								card.addEventListener('click', () => {
+								modalTitle.textContent = card.dataset.name;
+								modalImg.src = card.dataset.img;
+								modalDesc.textContent = card.dataset.desc;
+								modalMap.src = card.dataset.map;
+								modal.style.display = 'block';
+								});
+							});
+
+							closeModal.onclick = () => modal.style.display = 'none';
+							window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; }
+							</script><br>
                             <ul class="actions special dos">
 									<li><a href="https://api.whatsapp.com/send?phone=573247674274" class="button large dos">Reservar</a></li>
 							</ul>

@@ -100,6 +100,95 @@
                                     <label for="carrusel-radio-6" class="carrusel-nav-btn"></label>
                                 </div>
                             </div><br>
+
+							<!-- Cards -->
+							<div class="hotels-container">
+								<div class="hotel-card" 
+									data-name="Hotel Park Royal Beach"
+									data-img="images/hotel cancun/cancunhotel1.jpg"
+									data-desc="El Park Royal Beach Cancún es un resort todo incluido de 4 estrellas, ubicado en el corazón de la zona hotelera de Cancún, México. Este hotel ofrece una combinación perfecta de diversión y tranquilidad, con acceso directo a las playas de arena blanca y aguas cristalinas del Caribe mexicano."
+									data-map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.0227741045555!2d-86.7607488!3d21.1116582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4c2935a86d2fdb%3A0xbff455c89905efe4!2sPark%20Royal%20Beach%20Canc%C3%BAn!5e0!3m2!1ses-419!2sco!4v1757691570199!5m2!1ses-419!2sco">
+									<h3>Hotel Park Royal Beach</h3>
+									<img src="images/hotel cancun/cancunhotel1.jpg" alt="Hotel" class="hotel-img">
+								</div>
+
+								<div class="hotel-card" 
+									data-name="Hotel All Ritmo"
+									data-img="images/hotel cancun/cancunhotel2.webp"
+									data-desc="El All Ritmo Cancún Resort & Waterpark es un resort familiar todo incluido ubicado en Cancún, México, que combina alojamiento confortable con emocionantes atracciones acuáticas. Situado a solo 10 minutos de la zona hotelera de Cancún, el resort se encuentra en la carretera a Puerto Juárez-Punta Sam, ofreciendo fácil acceso a las principales atracciones de la ciudad."
+									data-map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.757316293829!2d-86.80524439999999!3d21.201797499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4c2ea1327c8be1%3A0xd1b342cc46d2e85e!2sAll%20Ritmo%20Canc%C3%BAn%20Resort%20%26%20Waterpark!5e0!3m2!1ses-419!2sco!4v1757693069004!5m2!1ses-419!2sco">
+									<h3>Hotel All Ritmo</h3>
+									<img src="images/hotel cancun/cancunhotel2.webp" alt="Hotel" class="hotel-img">
+								</div>
+
+								<div class="hotel-card" 
+									data-name="Hotel Ocean View"
+									data-img="images/hotel cancun/cancunhotel3.jpg"
+									data-desc="El Ocean View Cancun Arenas es un hotel de 4 estrellas ubicado en la zona hotelera de Cancún, a pocos pasos de la playa. Rodeado de jardines, discotecas y restaurantes, ofrece habitaciones de estilo mediterráneo con vistas al Lago Nichupté y al mar Caribe. Entre sus instalaciones destacan una piscina al aire libre, gimnasio y tres restaurantes que sirven cocina variada."
+									data-map="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3720.9276642081627!2d-86.8015389!3d21.1552768!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4c285c295c7365%3A0xaf23b6f69fc742f0!2sOcean%20View%20Cancun%20Arenas!5e0!3m2!1ses-419!2sco!4v1757694013655!5m2!1ses-419!2sco">
+									<h3>Hotel Ocean View</h3>
+									<img src="images/hotel cancun/cancunhotel3.jpg" alt="Hotel" class="hotel-img">
+								</div>
+
+								<div class="hotel-card" 
+									data-name="Hotel SOL Y MAR"
+									data-img="images/hotel cancun/cancunhotel4.avif"
+									data-desc="El Hotel Sol y Mar en Cancún es un complejo turístico ideal para disfrutar de las playas del Caribe Mexicano. Ofrece cómodas habitaciones, restaurantes, piscinas y actividades recreativas, ubicado frente al mar con un ambiente relajante y familiar."
+									data-map="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3723.5053948701557!2d-86.7845679!3d21.0524675!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4e827d441a8ab7%3A0x40fa849455d1bf7b!2sSolymar%20Cancun%20Beach%20Resort!5e0!3m2!1ses!2sco!4v1757694389342!5m2!1ses!2sco">
+									<h3>Hotel SOL Y MAR</h3>
+									<img src="images/hotel cancun/cancunhotel4.avif" alt="Hotel" class="hotel-img">
+								</div>
+							</div>
+							<!-- Modal único -->
+							<div id="hotelModal" class="modal">
+								<div class="modal-content">
+									<span class="close" id="closeModal">&times;</span>
+									
+									<!-- Imagen -->
+									<img id="modalImg" src="" alt="Hotel">
+
+									<!-- Info -->
+									<div class="hotel-info">
+									<h2 id="modalTitle"></h2>
+									<p id="modalDesc"></p>
+									<h3>Servicios:</h3>
+									<ul class="services">
+										<li>📶 WiFi Gratis</li>
+										<li>🏊 Piscina</li>
+										<li>🍽️ Comida</li>
+										<li>🏖️ Playa</li>
+										<li>❄️ Aire Acondicionado</li>
+									</ul>
+									</div>
+
+									<!-- Mapa -->
+									<iframe id="modalMap" class="map" allowfullscreen="" loading="lazy"></iframe>
+								</div>
+							</div>
+
+							<script>
+							const modal = document.getElementById('hotelModal');
+							const closeModal = document.getElementById('closeModal');
+							const modalImg = document.getElementById('modalImg');
+							const modalTitle = document.getElementById('modalTitle');
+							const modalDesc = document.getElementById('modalDesc');
+							const modalMap = document.getElementById('modalMap');
+
+							// Selecciona todos los hoteles
+							document.querySelectorAll('.hotel-card').forEach(card => {
+								card.addEventListener('click', () => {
+								modalTitle.textContent = card.dataset.name;
+								modalImg.src = card.dataset.img;
+								modalDesc.textContent = card.dataset.desc;
+								modalMap.src = card.dataset.map;
+								modal.style.display = 'block';
+								});
+							});
+
+							closeModal.onclick = () => modal.style.display = 'none';
+							window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; }
+							</script><br>
+
                             <ul class="actions special dos">
 									<li><a href="https://api.whatsapp.com/send?phone=573247674274" class="button large dos">Reservar</a></li>
 							</ul>
