@@ -5203,10 +5203,10 @@ border: none;
 	}
 }
 
-.close {
+.closes {
 	position: absolute;
 	top: 12px;
-	right: 15px;
+	left: 15px;
 	font-size: 20px;
 	font-weight: bold;
 	cursor: pointer;
@@ -5223,7 +5223,7 @@ border: none;
 	box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
-.close:hover {
+.closes:hover {
 	background: #e60023;
 	transform: scale(1.1);
 	box-shadow: 0 4px 12px rgba(0,0,0,0.3);
