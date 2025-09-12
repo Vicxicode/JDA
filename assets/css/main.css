@@ -5240,5 +5240,11 @@ border: none;
 }
 
 .espacio {
-	margin-bottom: 10px;
+	margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .espacio {
+    margin-bottom: -28px; /* móvil */
+  }
 }
